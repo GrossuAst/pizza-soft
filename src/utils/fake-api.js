@@ -11,7 +11,7 @@ export function getData() {
     return new Promise((resolve) => {
         setTimeout(() => {
             const response = {
-                ok: false,
+                ok: true,
                 json: () => Promise.resolve(initialData)
             };
             resolve(checkResponse(response))

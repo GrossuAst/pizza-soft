@@ -2,11 +2,11 @@
     border: 2px solid #f0f0f0;
     border-radius: 4px;
     width: 350px;
-    height: 210px;
+    height: 200px;
     background: #fff;
     display: flex;
     box-sizing: border-box;
-    padding: 16px 24px;
+    padding: 12px 22px;
     gap: 8px;
 
     @media screen and (max-width: 1202px) {
@@ -17,8 +17,9 @@
     .container {
         display: flex;
         flex-direction: column;
-        gap: 16px;
-        width: 60%;
+        gap: 4px;
+        width: 45%;
+        justify-content: center;
 
         .name {
             margin: 0;
@@ -30,13 +31,17 @@
         .photo {
             height: 120px;
             width: 120px;
-            // object-fit: cover;
+            border: 2px solid #f0f0f0;
+            border-radius: 4px;
+            background-color: #F7F7F7;
         }
     }
 
     .infoContainer {
+        justify-content: center;
         display: flex;
         flex-direction: column;
+        gap: 6px;
 
         .title {
             margin: 0;

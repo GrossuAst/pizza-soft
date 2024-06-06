@@ -19,11 +19,11 @@ const EmployeeCard = ({ name, birthday, phone, role, isArchive }) => {
                 </h4>
                 <h4 className={ styles.title }>
                     Номер телефона:
-                    <span>{ phone }</span>
+                    <span className={ styles.info }>{ phone }</span>
                 </h4>
                 <h4 className={ styles.title }>
                     Должность: 
-                    <span>{ translatedRole }</span>
+                    <span className={ styles.info }>{ translatedRole }</span>
                 </h4>
             </div>
         </article>
