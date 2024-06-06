@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    padding: 24px 22px;
+    gap: 20px;
+
+    @media screen and (max-width: 927px) {
+        padding: 14px 12px;
+        gap: 15px;
+    }
+
+    @media screen and (max-width: 467px) {
+        padding: 6px 8px ;
+        gap: 10px;
+    }
+
+    .arrow {
+        height: 16px;
+        width: 16px;
+        cursor: pointer;
+
+        @media screen and (max-width: 927px) {
+            height: 14px;
+            width: 14px;
+        }
+
+        @media screen and (max-width: 467px) {
+            height: 12px;
+            width: 12px;
+        }
+
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+
+    .title {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        color: rgba(0, 0, 0, 0.85);
+
+        @media screen and (max-width: 927px) {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        @media screen and (max-width: 467px) {
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+}

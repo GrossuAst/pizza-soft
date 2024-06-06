@@ -1,0 +1,52 @@
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.5);
+
+    .contentHeader {
+        box-sizing: border-box;
+        padding: 16px 24px 15px 24px;
+        background-color: rgb(255, 255, 255);
+
+        .contentTitle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 500;
+
+            .number {
+                font-size: 14px;
+                font-weight: 400;
+                opacity: 0.5;
+
+            }
+        }
+    }
+
+    .list {
+        border-radius: 4px;
+        padding: 0;
+        margin: 8px;
+        list-style: none;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 12px;
+        row-gap: 8px;
+        justify-content: center;
+
+        .listItem{ 
+            
+            @media screen and (max-width: 1202px) {
+                width: 100%;    
+            }
+            
+            :nth-last-of-type() {
+                color:  red;
+            }
+        }
+    }
+}
