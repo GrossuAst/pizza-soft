@@ -1,6 +1,7 @@
 import styles from './employee-list.module.scss';
 import EmployeeCard from '../employee-card';
-import Preloader from '../preloader';
+import Preloader from '../ui/preloader';
+import Button from '../ui/button';
 import { getInitialData } from '../../services/employees/action';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -15,7 +16,9 @@ const EmployeeList = () => {
     }), shallowEqual);
 
     useEffect(() => {
-        dispatch(getInitialData());
+        if(employeesList.length === 0) {
+            dispatch(getInitialData());    
+        }
     }, []);
 
     return (
@@ -23,12 +26,9 @@ const EmployeeList = () => {
             <div className={ styles.contentHeader }>
                 <h2 className={ styles.contentTitle }>
                     Найденные сотрудники
-                    <span className={ styles.number }>{ 16 }</span>
+                    <span className={ styles.number }>{ employeesList.length }</span>
                 </h2>
-                <button type='button' className={ styles.addButton }>
-                    <div className={ styles.plus } />
-                    Добавить сотрудника
-                </button>
+                <Button text='Добавить сотрудника' name='add-employee' />
             </div>
             <ul className={ styles.list }>
                 {
@@ -41,6 +41,7 @@ const EmployeeList = () => {
                                 phone={ item.phone }
                                 role={ item.role }
                                 isArchive={ item.isArchive }
+                                id={ item.id }
                             />
                         </li>
                     ))

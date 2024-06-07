@@ -6,4 +6,8 @@
     margin: 0 auto;
     box-sizing: border-box;
     padding: 12px;
+
+    @media screen and (max-width: 467px) {
+        padding: 6px;
+    }
 }

@@ -6,10 +6,20 @@
 
     .contentHeader {
         box-sizing: border-box;
-        padding: 16px 24px 15px 24px;
+        padding: 16px 24px 16px 24px;
         background-color: rgb(255, 255, 255);
         display: flex;
         justify-content: space-between;
+
+        @media screen and (max-width: 1075px) {
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 467px) {
+            padding: 8px 12px;
+        }
 
         .contentTitle {
             display: flex;
@@ -19,34 +29,15 @@
             font-size: 20px;
             font-weight: 500;
 
+            @media screen and (max-width: 467px) {
+                font-size: 16px;
+            }
+
             .number {
                 font-size: 14px;
                 font-weight: 400;
                 opacity: 0.5;
 
-            }
-        }
-
-        .addButton {
-            border: none;
-            padding: 6px 26px;
-            cursor: pointer;
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            border-radius: 4px;
-            background-color: #EFEFEF;
-            font-size: 16px;
-            font-weight: 700;
-
-            &:hover{
-                opacity: 0.7;
-            }
-
-            .plus {
-                background: url('../../images/plus.png') center no-repeat;
-                height: 16px;
-                width: 16px;
             }
         }
     }
@@ -61,12 +52,30 @@
         flex-wrap: wrap;
         column-gap: 12px;
         row-gap: 8px;
-        justify-content: center;
+        justify-content: space-around;
+
+        @media screen and (max-width: 820px) {
+            
+        }
 
         .listItem{ 
             
+
+            @media screen and (max-width: 1202px) {
+                max-width: 420px;
+                width: 100%;
+            }
+            
             @media screen and (max-width: 1202px) {
                 width: 100%;    
+            }
+
+            @media screen and (max-width: 820px) {
+                width: 350px;
+            }
+
+            @media screen and (max-width: 467px) {
+                width: 100%;
             }
             
             &:last-of-type {
