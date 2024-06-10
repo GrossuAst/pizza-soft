@@ -1,21 +1,41 @@
 .employeeDetails {
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
+    padding: 40px 0;
+    background-color: #F7F7F7;
 
     .form {
         display: flex;
         flex-direction: column;
-        max-width: 350px;
+        gap: 30px;
+        // justify-content: space-around;
+        max-width: 400px;
         margin: 0 auto;
+        background-color: #FFFFFF;
+        box-sizing: border-box;
+        padding: 10px;
+        border-radius: 5px;
 
         .formHeader {
+            background-color: #4249BF;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 32px;
 
+            .formTitle {
+                font-size: 22px;
+                text-align: center;
+                font-weight: 500;
+                margin: 0;
+            }
         }
 
         .inputGroup {
             display: flex;
             flex-direction: column;
-            gap: 8px;
         }
     }
 }
