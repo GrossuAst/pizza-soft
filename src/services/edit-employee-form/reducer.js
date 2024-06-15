@@ -1,10 +1,12 @@
-import { UPDATE_VALUES } from "./action";
+import { UPDATE_VALUES, UPDATE_FORM_ARCHIVE_STATUS } from "./action";
 
 const initialState = {
     form: {
         name: '',
-        lastName: '',
         birthday: '',
+        role: '',
+        phone: '',
+        isArchive: '',
     }
 };
 
@@ -16,6 +18,15 @@ export const editEmployeeFormReducer = (state = initialState, action) => {
                 form: action.payload
             }
         }
+        case UPDATE_FORM_ARCHIVE_STATUS: {
+            return {
+                ...state,
+                form: {
+                    ...state.form,
+                    isArchive: action.payload
+                }
+            };
+        };
         default:
             return state;
     }

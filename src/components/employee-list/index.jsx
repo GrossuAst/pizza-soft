@@ -10,14 +10,13 @@ import { useSelector, shallowEqual } from "react-redux";
 const EmployeeList = () => {
     const dispatch = useDispatch();
 
-    const { employeesList, isInitialDataLoading } = useSelector((store) => ({
+    const { employeesList } = useSelector((store) => ({
         employeesList: store.employees.employees,
-        isInitialDataLoading: store.employees.feedRequest
     }), shallowEqual);
 
     useEffect(() => {
         if(employeesList.length === 0) {
-            dispatch(getInitialData());    
+            dispatch(getInitialData());
         }
     }, []);
 
@@ -32,8 +31,7 @@ const EmployeeList = () => {
             </div>
             <ul className={ styles.list }>
                 {
-                    isInitialDataLoading ? <Preloader /> :
-                    employeesList && employeesList.map((item, index) => (
+                    employeesList.map((item, index) => (
                         <li key={ item.id } className={ styles.listItem }>
                             <EmployeeCard 
                                 name={ item.name }

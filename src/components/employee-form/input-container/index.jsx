@@ -7,9 +7,12 @@ const InputContainer = ({ labelFor, inputId, widthMask = false, title, name, val
         currentEmployee: store.currentEmployee.employeeData
     }), shallowEqual);
 
-    let birthday = currentEmployee ? currentEmployee.birthday.replace(/\./g, "") : "";
-    const phone = currentEmployee ? currentEmployee.phone : '';
-    
+    const { birthday, phone } = currentEmployee;
+    // console.log(birthday, phone)
+
+    // const birthday = currentEmployee.birthday.replace(/\./g, "");
+    // const phone = currentEmployee ? currentEmployee.phone;
+
     return (
         <div className={ styles.inputContainer }>
             <label htmlFor={ labelFor } className={ styles.label }>{ title }</label>
@@ -27,7 +30,7 @@ const InputContainer = ({ labelFor, inputId, widthMask = false, title, name, val
                 /> : 
                 <input 
                     id = { inputId } type='text' name = { name } placeholder='Введите имя' className = { styles.input } 
-                    defaultValue = { currentEmployee && currentEmployee.name }
+                    value = { values.name }
                     onChange={ handleChange }
                 />
             }

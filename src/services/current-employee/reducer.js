@@ -1,4 +1,4 @@
-import { GET_CURRENT_EMPLOYEE } from "./action";
+import { GET_CURRENT_EMPLOYEE, UPDATE_EMPLOYEE_ARCHIVE_STATUS } from "./action";
 
 const initialState = {
     employeeData: {
@@ -18,8 +18,17 @@ export const currentEmployeeReducer = (state = initialState, action) => {
             return {
                 ...state,
                 employeeData: { name: data.name, birthday: data.birthday, role: data.role, phone: data.phone, isArchive: data.isArchive, id: data.id }
-            }
-        }
+            };
+        };
+        case UPDATE_EMPLOYEE_ARCHIVE_STATUS: {
+            return {
+                ...state,
+                employeeData: {
+                    ...state.employeeData,
+                    isArchive: action.payload
+                }
+            };
+        };
         default:
             return state;
     }

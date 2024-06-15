@@ -8,17 +8,16 @@ import { getInitialData } from '../../services/employees/action';
 const EmployeePage = () => {
     const dispatch = useDispatch();
 
-    const { employeesList, isInitialDataLoading } = useSelector((store) => ({
+    const { employeesList } = useSelector((store) => ({
         employeesList: store.employees.employees,
-        isInitialDataLoading: store.employees.feedRequest
     }), shallowEqual);
 
     useEffect(() => {
         if(employeesList.length === 0) {
-            dispatch(getInitialData());    
+            dispatch(getInitialData());
         }
     }, []);
-
+    
     return (
         <EmployeeForm />
     )

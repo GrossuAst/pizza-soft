@@ -5,6 +5,6 @@ import { currentEmployeeReducer } from './current-employee/reducer';
 
 export const rootReducer = combineReducers({
     employees: employeesReducer,
-    // editEmployeeForm: editEmployeeFormReducer,
+    editEmployeeForm: editEmployeeFormReducer,
     currentEmployee: currentEmployeeReducer,
 });
